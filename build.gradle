@@ -1,0 +1,52 @@
+plugins {
+    id 'net.fabricmc.fabric-loom' version "${loom_version}"
+}
+
+def phase2TestBuild = providers.gradleProperty('phase2Test').map { it == 'true' }.getOrElse(false)
+
+base {
+    archivesName = phase2TestBuild ? 'erzmarken-PHASE2-TEST' : 'erzmarken'
+}
+version = project.mod_version + (phase2TestBuild ? '-test' : '')
+group = 'de.baluserver'
+
+repositories { }
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+}
+
+processResources {
+    inputs.property 'version', project.version
+    inputs.property 'phase2_test_build', phase2TestBuild.toString()
+    filesMatching('fabric.mod.json') { expand 'version': project.version, 'phase2_test_build': phase2TestBuild.toString() }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 25
+    options.encoding = 'UTF-8'
+}
+java {
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
+}
+
+// Written only after the actual Gradle build succeeds; binds a jar to the current sources.
+tasks.named('build') {
+    doLast {
+        def sha = { byte[] bytes -> java.util.HexFormat.of().formatHex(java.security.MessageDigest.getInstance('SHA-256').digest(bytes)) }
+        def inputs = (fileTree('src').files.findAll { it.isFile() } + [file('build.gradle'), file('settings.gradle'), file('gradle.properties')])
+        def sourceLines = inputs.sort { a, b -> relativePath(a).replace('\\', '/') <=> relativePath(b).replace('\\', '/') }.collect {
+            relativePath(it).replace('\\', '/') + '\n' + sha(it.bytes) + '\n'
+        }.join('')
+        def remapped = tasks.findByName('remapJar')
+        def artifact = (remapped != null && remapped.enabled && remapped.state.executed)
+            ? remapped.archiveFile.get().asFile : tasks.named('jar').get().archiveFile.get().asFile
+        def report = [schema: 1, task: 'build', testBuild: phase2TestBuild, version: project.version.toString(),
+            minecraft: project.minecraft_version, gradle: gradle.gradleVersion, javaRelease: 25,
+            jar: artifact.name, sha256: sha(artifact.bytes), sourceDigest: sha(sourceLines.getBytes('UTF-8'))]
+        file('build/phase2-build-report.json').text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(report))
+    }
+}

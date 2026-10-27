@@ -1,0 +1,47 @@
+# Java / Gradle / Fabric
+.gradle/
+build/
+out/
+*.class
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+.tools/
+.fabric/
+run/
+runClient/
+runServer/
+__pycache__/
+*.pyc
+.venv/
+# IDE and OS
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.vscode/
+Thumbs.db
+.DS_Store
+# Secrets and local settings
+.env
+.env.*
+!.env.example
+local.properties
+*.pem
+*.key
+# Server runtime and private evidence
+logs/
+crash-reports/
+world/
+worlds/
+test-world/
+playerdata/
+server.properties
+ops.json
+whitelist.json
+usercache.json
+banned-*.json
+pruefprotokolle/
+build-nachweis/
+*.log
+*.zip
