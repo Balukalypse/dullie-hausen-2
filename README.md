@@ -8,11 +8,9 @@ Aktive Entwicklung: **2.0.0-phase2-wip.21**, Quellstand 27. Oktober 2026. Keine 
 
 Der aktuelle [Entwicklungsstatus](docs/ENTWICKLUNGSSTATUS.md) unterscheidet Implementierung, lokale Prüfungen und noch fehlende Spieltests. Für die nächste Arbeit mit [START-HIER-MORGEN.md](START-HIER-MORGEN.md) beginnen. Zusammenhängende Fortschritte werden auf einem eigenen Branch geprüft und per Pull Request eingereicht; lokale Sicherungen ergänzen GitHub. Die [Arbeitsregeln](AGENTS.md) halten diesen Ablauf fest.
 
-Am 27. Oktober 2026 ist der vollständige `.21-test`-Fabric-Build bestanden und unabhängig gegen Quellen und JAR-Prüfsumme geprüft worden: 77 Modklassen und sechs Mixins. Der [bereinigte Buildnachweis](docs/pruefungen/phase2-wip21-build.json) hält die Details fest. Gradle hat dabei keine Funktionstests ausgeführt (`test NO-SOURCE`); Kunden-Spieltest, Neustart- und Prozessabbruchprüfung des Warenkaufs stehen weiter aus.
-
 Der vorhandene Code umfasst Aktivitätsbelohnungen, Spielerkonten, Shopverwaltung mit Lager und separater Kasse, Inventarwechsel und Schutzprüfungen, Transaktionsjournale, Belegprüfungen und Werkzeuge zur Wiederherstellungsprüfung. Bugreports, Verwaltungsfunktionen und optionale externe KI-Hilfsprogramme sind ebenfalls enthalten. KI-Vorschläge erfordern menschliche Prüfung.
 
-Der neueste Warenkauf ist im Code angebunden, im regulären Betrieb jedoch gesperrt. Experimentelle Phase-2-Funktionen erfordern einen gesonderten Testbuild und ausdrücklich freigegebenen isolierten lokalen Testbetrieb. Für Warenkauf .21 fehlen noch echter Spieltest, Neustart- und Prozessabbruchtest. Ältere Test-JARs belegen nicht den neuesten Quellstand.
+Der neueste Warenkauf ist im Code angebunden, im regulären Betrieb jedoch gesperrt. Experimentelle Phase-2-Funktionen erfordern einen gesonderten Testbuild und ausdrücklich freigegebenen isolierten lokalen Testbetrieb. Für Warenkauf .21 fehlen laut mitgeliefertem Entwicklungsnachweis noch vollständiger Gradle-Build, echter Spieltest, Neustart- und Prozessabbruchtest. Ältere Test-JARs belegen nicht den neuesten Quellstand. In diesem Veröffentlichungsauftrag wurden keine Builds oder Funktionstests ausgeführt.
 
 Offene Transaktionen können manuellen Abgleich erfordern. Journale nicht löschen, um Fehler scheinbar zu beheben. Nur in isolierten Testwelten mit Sicherungen erproben.
 
@@ -44,7 +42,7 @@ Der Projektinhaber hat die Veröffentlichung unter der bereits im Ursprungsarchi
 
 ## English overview
 
-Dullie Hausen 2.0 is a Minecraft Java Fabric server mod under active development, featuring a token economy, shop accounts and stock management, inventory safeguards, transaction journals and recovery review tools. Current source: **2.0.0-phase2-wip.21**. This is unfinished software, not a stable release. A full .21 test build passed on 27 October 2026 and its source digest and JAR checksum were independently verified. The latest retail purchase flow remains disabled in ordinary operation; live gameplay, restart and process interruption tests are still pending.
+Dullie Hausen 2.0 is a Minecraft Java Fabric server mod under active development, featuring a token economy, shop accounts and stock management, inventory safeguards, transaction journals and recovery review tools. Current source: **2.0.0-phase2-wip.21**. This is unfinished software, not a stable release. The latest retail purchase flow remains disabled in ordinary operation and lacks a full .21 Gradle build and live gameplay, restart and process interruption tests according to the supplied development record.
 
 The roadmap includes transaction validation, reliable persistence, administration, optional AI-assisted bug triage, quests and ongoing extensions. Community bug reports, suggestions and possible GitHub contributions are **planned for the public testing phase**, not presented as existing activity. There is no fixed final feature scope. Use the issue templates and submit only sanitized evidence. See SECURITY.md for private vulnerability reporting.
 
