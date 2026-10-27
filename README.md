@@ -6,6 +6,8 @@ Minecraft-Java-Servermod auf Basis von Fabric mit Tokenwirtschaft, Shops und ein
 
 Aktive Entwicklung: **2.0.0-phase2-wip.21**, Quellstand 27. Oktober 2026. Keine stabile Veröffentlichung. Implementierung bedeutet hier keine vollständig getestete oder garantierte Funktion. Der technische Mod-Bezeichner lautet weiterhin `erzmarken`, das Java-Paket `de.baluserver.erzmarken`.
 
+Der aktuelle [Entwicklungsstatus](docs/ENTWICKLUNGSSTATUS.md) unterscheidet Implementierung, lokale Prüfungen und noch fehlende Spieltests. Für die nächste Arbeit mit [START-HIER-MORGEN.md](START-HIER-MORGEN.md) beginnen. Zusammenhängende Fortschritte werden auf einem eigenen Branch geprüft und per Pull Request eingereicht; lokale Sicherungen ergänzen GitHub. Die [Arbeitsregeln](AGENTS.md) halten diesen Ablauf fest.
+
 Der vorhandene Code umfasst Aktivitätsbelohnungen, Spielerkonten, Shopverwaltung mit Lager und separater Kasse, Inventarwechsel und Schutzprüfungen, Transaktionsjournale, Belegprüfungen und Werkzeuge zur Wiederherstellungsprüfung. Bugreports, Verwaltungsfunktionen und optionale externe KI-Hilfsprogramme sind ebenfalls enthalten. KI-Vorschläge erfordern menschliche Prüfung.
 
 Der neueste Warenkauf ist im Code angebunden, im regulären Betrieb jedoch gesperrt. Experimentelle Phase-2-Funktionen erfordern einen gesonderten Testbuild und ausdrücklich freigegebenen isolierten lokalen Testbetrieb. Für Warenkauf .21 fehlen laut mitgeliefertem Entwicklungsnachweis noch vollständiger Gradle-Build, echter Spieltest, Neustart- und Prozessabbruchtest. Ältere Test-JARs belegen nicht den neuesten Quellstand. In diesem Veröffentlichungsauftrag wurden keine Builds oder Funktionstests ausgeführt.
