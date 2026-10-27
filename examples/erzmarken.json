@@ -1,0 +1,52 @@
+{
+  "announceRewards": true,
+  "trackPlacedOres": true,
+  "oreRewards": {
+    "minecraft:diamond_ore": 3,
+    "minecraft:deepslate_diamond_ore": 3,
+    "minecraft:emerald_ore": 3,
+    "minecraft:deepslate_emerald_ore": 3,
+    "minecraft:ancient_debris": 3,
+    "minecraft:redstone_ore": 2,
+    "minecraft:deepslate_redstone_ore": 2,
+    "minecraft:gold_ore": 1,
+    "minecraft:deepslate_gold_ore": 1,
+    "minecraft:nether_gold_ore": 1,
+    "minecraft:iron_ore": 1,
+    "minecraft:deepslate_iron_ore": 1,
+    "minecraft:lapis_ore": 1,
+    "minecraft:deepslate_lapis_ore": 1
+  },
+  "shop": [
+    {
+      "id": "spawner",
+      "name": "Spawner x1",
+      "item": "minecraft:spawner",
+      "amount": 1,
+      "price": 600
+    },
+    {
+      "id": "beacon",
+      "name": "Beacon x1",
+      "item": "minecraft:beacon",
+      "amount": 1,
+      "price": 300
+    },
+    {
+      "id": "elytra",
+      "name": "Elytra x1",
+      "item": "minecraft:elytra",
+      "amount": 1,
+      "price": 200
+    }
+  ],
+  "oreIntervals": {
+    "diamond": 2,
+    "emerald": 1,
+    "ancient_debris": 1,
+    "redstone": 3,
+    "gold": 3,
+    "iron": 7,
+    "lapis": 5
+  }
+}
