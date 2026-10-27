@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "erzmarken",
+  "version": "${version}",
+  "name": "Dullie Hausen",
+  "description": "Serverseitige Token-Waehrung mit Aktivitaeten, Timber-Erkennung und Bugreport-System.",
+  "authors": [
+    "Community-Projekt"
+  ],
+  "license": "MIT",
+  "environment": "server",
+  "custom": { "dulliehausen:phase2-test": "${phase2_test_build}" },
+  "entrypoints": {
+    "main": [
+      "de.baluserver.erzmarken.ErzmarkenMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  },
+  "mixins": [
+    "erzmarken.mixins.json"
+  ]
+}

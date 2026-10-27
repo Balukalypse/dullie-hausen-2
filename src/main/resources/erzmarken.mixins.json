@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "de.baluserver.erzmarken.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "PistonOreProtectionMixin",
+    "MinecraftServerPlayerDataAccessor",
+    "ShopInventoryPlayerTransferMixin",
+    "ShopInventoryPickupMixin",
+    "ShopInventoryMenuDropMixin",
+    "ShopInventoryRecipePlacementMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
