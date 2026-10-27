@@ -12,13 +12,16 @@ Remote-Stand und lokale Änderungen prüfen. Auf einem eigenen Branch arbeiten
 und sinnvolle Fortschritte per Pull Request einreichen.
 
 Der Warenkauf ist implementiert und lokal geprüft, im regulären Betrieb aber
-gesperrt. Für .21 fehlen ein sauberer vollständiger Fabric-Build und der echte
-Kunden-Spieltest samt Neustart. Kein älteres JAR als .21 ausgeben.
+gesperrt. Der vollständige .21-Testbuild ist am 27. Oktober 2026 bestanden und
+gegen die Quellen geprüft: 77 Modklassen, sechs Mixins, gültige JAR-Prüfsumme.
+Der [bereinigte Buildnachweis](docs/pruefungen/phase2-wip21-build.json) enthält
+Versionen und Hashes. Echter Kunden-Spieltest und Neustartprüfung fehlen weiter.
 
-Nächster fachlicher Schritt: vollständigen Build und JAR-/Quellabgleich
-abschließen, anschließend einen isolierten echten Kundenkauf prüfen, sobald
-ein zweites Testkonto verfügbar ist. Offene Transaktionen benötigen weiterhin
-manuellen Abgleich. Den Build-/Spielteststatus danach ausdrücklich aktualisieren.
+Nächster fachlicher Schritt: den geprüften Build bei vollständig gestopptem
+isoliertem Testserver installieren und einen isolierten echten Kundenkauf
+prüfen, sobald ein zweites Testkonto verfügbar ist. Das letzte installierte
+und im Spiel geprüfte JAR bleibt bislang .14-test. Offene Transaktionen
+benötigen weiterhin manuellen Abgleich. Build und Spieltest getrennt dokumentieren.
 
 Lokale Welten, Zugänge und vertrauliche Protokolle gehören ausschließlich in
 die jeweilige private Arbeitsumgebung. Sie werden nicht aus diesem Repository
